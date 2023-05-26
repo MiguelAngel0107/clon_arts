@@ -2,7 +2,6 @@ import Categorias from "@/components/home/categorias";
 import Image from "next/image";
 
 export default function Home() {
-
   const images = [
     "./img/prueba1.jpg",
     "./img/prueba2.jpg",
@@ -19,7 +18,6 @@ export default function Home() {
     "./img/prueba13.jpg",
   ];
 
-
   return (
     <header>
       <div className="py-4">
@@ -34,22 +32,21 @@ export default function Home() {
 
         <main className="flex flex-col cotainer max-auto text-white items-center pt-10">
           <Categorias />
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-4 pt-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 px-4 pt-10">
             {/* Iterar sobre las imágenes y mostrarlas */}
             {images.map((image, index) => (
-             <div
-             key={index}
-             className="relative"
-           >
-             <img
-               src={image}
-               alt={`Imagen ${index + 1}`}
-               className="w-full h-[750px]"
-             />
-             <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity duration-300 flex items-center justify-center">
-               <span className="text-white text-lg font-montserrat">Texto de la imagen</span>
-             </div>
-           </div>
+              <div key={index} className="relative">
+                <img
+                  src={image}
+                  alt={`Imagen ${index + 1}`}
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="text-white text-lg font-montserrat">
+                    Texto de la imagen
+                  </span>
+                </div>
+              </div>
             ))}
           </div>
         </main>
