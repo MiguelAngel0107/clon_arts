@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <header>
       <div className="py-4">
-        <div className="container mx-auto text-white text-center">
+        <div className="container mx-auto text-white text-center mt-24">
           <h1 className="text-5xl font-montserrat font-bold">
             Sesión de fotos en estudio fotográfico
           </h1>
@@ -37,12 +37,19 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-4 pt-10">
             {/* Iterar sobre las imágenes y mostrarlas */}
             {images.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`Imagen ${index + 1}`}
-                className="w-full h-auto"
-              />
+             <div
+             key={index}
+             className="relative"
+           >
+             <img
+               src={image}
+               alt={`Imagen ${index + 1}`}
+               className="w-full h-[750px]"
+             />
+             <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity duration-300 flex items-center justify-center">
+               <span className="text-white text-lg font-montserrat">Texto de la imagen</span>
+             </div>
+           </div>
             ))}
           </div>
         </main>

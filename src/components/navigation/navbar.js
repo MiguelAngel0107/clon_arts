@@ -18,8 +18,8 @@ function Navbar() {
   }, []);
 
   const navbarClassName = isPageAtTop
-    ? "bg-black p-6 text-white font-monserrat py-8"
-    : "bg-neutral-900 p-6 text-white font-monserrat py-8";
+    ? "bg-black p-6 text-white font-monserrat py-8 fixed w-full z-10"
+    : "bg-neutral-900 p-6 text-white font-monserrat py-8 fixed w-full z-10";
 
   return (
     <div className={navbarClassName}>
@@ -32,7 +32,7 @@ function Navbar() {
 
         <div className="flex flex-end px-14">
           <nav>
-            <ul className="flex gap-2 text-sm font-montserrat">
+            <ul className="flex gap-2 text-sm font-montserrat font-light">
               <li className=" hover:text-yellow-600 px-3 group">
                 <span className="absolute top-14 h-1 bg-yellow-700 w-[265px] transform origin-left scale-x-0 group-hover:scale-x-100 transition duration-500"></span>
                 <a href="https://cmartsproducciones.com/" aria-current="page">
