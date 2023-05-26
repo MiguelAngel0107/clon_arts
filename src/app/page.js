@@ -3,19 +3,22 @@ import Image from "next/image";
 
 export default function Home() {
   const images = [
-    "./img/prueba1.jpg",
-    "./img/prueba2.jpg",
-    "./img/prueba3.jpg",
-    "./img/prueba4.jpg",
-    "./img/prueba5.jpg",
-    "./img/prueba6.jpg",
-    "./img/prueba7.jpg",
-    "./img/prueba8.jpg",
-    "./img/prueba9.jpg",
-    "./img/prueba10.jpg",
-    "./img/prueba11.jpg",
-    "./img/prueba12.jpg",
-    "./img/prueba13.jpg",
+    "https://cmartsproducciones.com/wp-content/uploads/2021/08/embarazadas-premium-33.jpg",
+    "https://cmartsproducciones.com/wp-content/uploads/2021/08/embarazadas-semirealistas-46.jpg",
+    "https://cmartsproducciones.com/wp-content/uploads/2021/08/embarazadas-clasico-21.jpg",
+    "https://cmartsproducciones.com/wp-content/uploads/2021/08/embarazadas-artisitico-17.jpg",
+    "https://cmartsproducciones.com/wp-content/uploads/2021/08/sesion-de-fotos-ejecutivos-linkedin-hombres-1.jpg",
+    "https://cmartsproducciones.com/wp-content/uploads/2022/02/sesion-de-fotos-para-ejecutivos-4-1.jpg",
+    "https://cmartsproducciones.com/wp-content/uploads/2022/03/cumpleanos-15-anos-24.jpg",
+    "https://cmartsproducciones.com/wp-content/uploads/2021/08/sesion-de-fotos-para-familias-145b.jpg",
+    "https://cmartsproducciones.com/wp-content/uploads/2021/08/cumpleanos-8.jpg",
+    "https://cmartsproducciones.com/wp-content/uploads/2022/03/sesion-de-fotos-cumpleanos-50-anos-4b.jpg",
+    "https://cmartsproducciones.com/wp-content/uploads/2021/08/sesion-de-fotos-para-familias-83.jpg",
+    "https://cmartsproducciones.com/wp-content/uploads/2021/08/sesion-de-fotos-para-recien-nacidos-7.jpg",
+    "https://cmartsproducciones.com/wp-content/uploads/2021/08/sesion-de-foto-para-graduacion-19-1.jpg",
+    "https://cmartsproducciones.com/wp-content/uploads/2023/05/fotos-para-bodas-3-2.jpg",
+    "https://cmartsproducciones.com/wp-content/uploads/2023/05/fotos-para-bodas-Miraflores-Lima-Peru-1-1.jpg",
+    "https://cmartsproducciones.com/wp-content/uploads/2023/05/fotos-para-bodas-19.jpg",
   ];
 
   return (
@@ -30,7 +33,7 @@ export default function Home() {
           </div>
         </div>
 
-        <main className="flex flex-col cotainer max-auto text-white items-center pt-10">
+        <main className="flex flex-col cotainer max-auto text-white items-center px-2 pt-10">
           <Categorias />
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 px-4 pt-10">
             {/* Iterar sobre las imágenes y mostrarlas */}
