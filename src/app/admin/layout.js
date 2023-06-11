@@ -7,14 +7,24 @@ import { SlideMenu } from "primereact/slidemenu";
 import { items } from "@/utils/admin/home/itemsBar";
 
 import { useState } from "react";
+import { useEffect } from "react";
 
 export default function Layout({ children }) {
-  const [splitterPanelSize, setSplitterPanelSize] = useState(200);
+  const [splitterPanelSize, setSplitterPanelSize] = useState(window.innerWidth/8);
+  const [sizePanel, setSizePanel] = useState(5);
+
+  useEffect(() => {
+    const pageWidth = window.innerWidth;
+    setSizePanel((splitterPanelSize * 100) / pageWidth);
+    console.log(sizePanel);
+  }, [splitterPanelSize]);
 
   const handleResize = (event) => {
+    const pageWidth = window.innerWidth;
     const newSplitterPanelSize = event.sizes;
-    console.log(newSplitterPanelSize)
-    setSplitterPanelSize(newSplitterPanelSize[1]);
+
+    console.log(newSplitterPanelSize);
+    setSplitterPanelSize((newSplitterPanelSize[0] * pageWidth) / 100);
     console.log(splitterPanelSize);
   };
 
@@ -25,23 +35,27 @@ export default function Layout({ children }) {
     >
       <SplitterPanel
         className="flex align-items-center justify-content-center w-full card"
-        size={10}
+        size={sizePanel}
       >
         <SlideMenu
           model={items}
           viewportHeight={window.innerHeight - 20}
-          menuWidth={280}
-          style={{ width: `${splitterPanelSize}px`, height: "100%" }}
+          menuWidth={splitterPanelSize}
+          style={{
+            width: `${splitterPanelSize}px`,
+            height: "100%",
+            background: "#bdbdbd",
+          }}
         />
       </SplitterPanel>
 
-      <SplitterPanel size={80}>
+      <SplitterPanel size={90}>
         <Splitter layout="vertical">
           <SplitterPanel
             className="flex align-items-center justify-content-center"
-            size={15}
+            size={-10}
           >
-            Panel 2
+            NavBar
           </SplitterPanel>
 
           <SplitterPanel
@@ -52,6 +66,7 @@ export default function Layout({ children }) {
           </SplitterPanel>
         </Splitter>
       </SplitterPanel>
+
     </Splitter>
   );
 }

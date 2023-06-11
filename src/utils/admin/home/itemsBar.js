@@ -1,5 +1,12 @@
 export const items = [
   {
+    label: "CM ARTS",
+    icon: "pi pi-fw pi-user",
+  },
+  {
+    separator: true,
+  },
+  {
     label: "File",
     icon: "pi pi-fw pi-file",
     items: [
