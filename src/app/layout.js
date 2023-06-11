@@ -1,4 +1,12 @@
 import "../style/globals.css";
+
+
+//theme
+import "primereact/resources/themes/lara-light-indigo/theme.css";         
+//core
+import "primereact/resources/primereact.min.css";    
+
+
 import { Inter } from "next/font/google";
 import Navbar from "@/components/navigation/navbar";
 
@@ -13,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} bg-black`}>
-        <Navbar />
+        {/*<Navbar />*/}
         {children}
       </body>
     </html>
