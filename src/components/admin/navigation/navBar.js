@@ -1,6 +1,7 @@
 "use client";
 import React, { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
+import { UserIcon } from "@heroicons/react/solid";
 
 function NavBar() {
   return (
@@ -33,12 +34,8 @@ function NavBar() {
 
         <Menu as="div" className="flex items-center md:order-2">
           <div>
-            <Menu.Button className="flex text-lg bg-gray-700 rounded-full p-1 px-2 justify-center items-center border-2 border-gray-600 hover:border-gray-400">
-              <img
-                class="w-11 h-11 p-1"
-                src="https://cdn-icons-png.flaticon.com/512/3106/3106921.png"
-                alt="user photo"
-              />
+            <Menu.Button className="flex text-lg bg-gray-700 rounded-full p-2 justify-center items-center border-2 border-gray-600 hover:border-white  text-gray-400 hover:text-white">
+              <UserIcon className="h-10 w-10 rounded-full" />
             </Menu.Button>
           </div>
           <Transition
