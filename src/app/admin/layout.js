@@ -1,72 +1,46 @@
-"use client";
-import { CacheProvider } from "@chakra-ui/next-js";
-import { ChakraProvider } from "@chakra-ui/react";
-
-import { Splitter, SplitterPanel } from "primereact/splitter";
-import { SlideMenu } from "primereact/slidemenu";
-import { items } from "@/utils/admin/home/itemsBar";
-
-import { useState } from "react";
-import { useEffect } from "react";
+import SideBar from "@/components/admin/navigation/sideBar";
 
 export default function Layout({ children }) {
-  const [splitterPanelSize, setSplitterPanelSize] = useState(window.innerWidth/8);
-  const [sizePanel, setSizePanel] = useState(5);
-
-  useEffect(() => {
-    const pageWidth = window.innerWidth;
-    setSizePanel((splitterPanelSize * 100) / pageWidth);
-    console.log(sizePanel);
-  }, [splitterPanelSize]);
-
-  const handleResize = (event) => {
-    const pageWidth = window.innerWidth;
-    const newSplitterPanelSize = event.sizes;
-
-    console.log(newSplitterPanelSize);
-    setSplitterPanelSize((newSplitterPanelSize[0] * pageWidth) / 100);
-    console.log(splitterPanelSize);
-  };
-
   return (
-    <Splitter
-      className="w-screen h-screen bg-neutral-900"
-      onResizeEnd={handleResize}
-    >
-      <SplitterPanel
-        className="flex align-items-center justify-content-center w-full card"
-        size={sizePanel}
-      >
-        <SlideMenu
-          model={items}
-          viewportHeight={window.innerHeight - 20}
-          menuWidth={splitterPanelSize}
-          style={{
-            width: `${splitterPanelSize}px`,
-            height: "100%",
-            background: "#bdbdbd",
-          }}
-        />
-      </SplitterPanel>
-
-      <SplitterPanel size={90}>
-        <Splitter layout="vertical">
-          <SplitterPanel
-            className="flex align-items-center justify-content-center"
-            size={-10}
-          >
-            NavBar
-          </SplitterPanel>
-
-          <SplitterPanel
-            className="flex align-items-center justify-content-center"
-            size={80}
-          >
-            <div className={`bg-neutral-950 w-full`}>{children}</div>;
-          </SplitterPanel>
-        </Splitter>
-      </SplitterPanel>
-
-    </Splitter>
+    <div className={`bg-neutral-950 w-full`}>
+      {" "}
+      <SideBar />
+      <div class="p-4 sm:ml-64">
+        {children}
+        <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+          <div class="grid grid-cols-3 gap-4 mb-4">
+            <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
+              <p class="text-2xl text-gray-400 dark:text-gray-500">1</p>
+            </div>
+            <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
+              <p class="text-2xl text-gray-400 dark:text-gray-500">2</p>
+            </div>
+            <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
+              <p class="text-2xl text-gray-400 dark:text-gray-500">3</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
+            <p class="text-2xl text-gray-400 dark:text-gray-500">4</p>
+          </div>
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+              <p class="text-2xl text-gray-400 dark:text-gray-500">5</p>
+            </div>
+            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+              <p class="text-2xl text-gray-400 dark:text-gray-500">6</p>
+            </div>
+            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+              <p class="text-2xl text-gray-400 dark:text-gray-500">7</p>
+            </div>
+            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+              <p class="text-2xl text-gray-400 dark:text-gray-500">8</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
+            <p class="text-2xl text-gray-400 dark:text-gray-500">9</p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

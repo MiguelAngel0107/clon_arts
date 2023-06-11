@@ -59,7 +59,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Para ocultar solo la barra de desplazamiento vertical */
 ::-webkit-scrollbar {
   display: none;
@@ -69,4 +68,11 @@
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+
+.p-splitter{
+  background-color: black;
+}
+.p-splitter-horizontal{
+  background-color: black;
 }
